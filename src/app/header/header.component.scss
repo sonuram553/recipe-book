@@ -1,0 +1,49 @@
+nav {
+  padding: 10px 40% 10px 20px;
+  display: flex;
+  background: lightcoral;
+  justify-content: space-between;
+
+  a {
+    color: white;
+  }
+}
+
+li {
+  display: inline-block;
+}
+
+.dropDownLinks {
+  margin-left: 100px;
+}
+
+.brand {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  > a {
+    text-decoration: none;
+  }
+}
+
+.navLinks {
+  padding: 0;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.active {
+  border: 1px solid;
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .navLinks {
+    display: none;
+  }
+}

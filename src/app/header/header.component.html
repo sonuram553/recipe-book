@@ -1,0 +1,16 @@
+<nav>
+  <h1 class="brand"><a href="#">Recipe Book</a></h1>
+  <ul class="navLinks">
+    <li [ngClass]="{ active: activeLink == 'recipe' }">
+      <a href="#" (click)="onSelect('recipe')">Recipes</a>
+    </li>
+    <li [ngClass]="{ active: activeLink == 'shopping' }">
+      <a href="#" (click)="onSelect('shopping')">Shopping List</a>
+    </li>
+    <li>
+      <ul class="dropDownLinks">
+        <li><a href="#">Manage</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>

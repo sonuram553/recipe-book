@@ -1,0 +1,16 @@
+.recipe-details {
+  width: 100%;
+  > section {
+    margin-bottom: 20px;
+  }
+}
+
+img {
+  width: 80%;
+}
+
+.heading {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}

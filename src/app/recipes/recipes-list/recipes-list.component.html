@@ -1,0 +1,6 @@
+<section class="recipe-list">
+  <button class="btn btn-success">Add Recipe</button>
+  <hr />
+  <app-recipes-item *ngFor="let recipeItem of recipes"
+  [recipeItem]="recipeItem"></app-recipes-item>
+</section>
