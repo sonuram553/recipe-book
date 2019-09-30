@@ -1,12 +1,56 @@
-<form>
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" class="form-control">
+<form (ngSubmit)="onAddIngredient()" #form="ngForm">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      ngModel
+      #nameInput="ngModel"
+      required
+    />
+    <div class="invalid-feedback" *ngIf="!nameInput.valid && nameInput.touched">
+      Please enter a name.
     </div>
-    <div class="form-group">
-        <label for="amount">Amount</label>
-        <input type="text" id="amount" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <input
+      type="number"
+      id="amount"
+      name="amount"
+      class="form-control"
+      ngModel
+      #amountInput="ngModel"
+      required
+      pattern="^[1-9]+\d*$"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        amountInput.errors && amountInput.touched
+          ? amountInput.errors.required
+          : false
+      "
+    >
+      Please enter a amount.
     </div>
-    <button class="btn btn-success">Add</button>
-    <button class="btn btn-danger">Delete</button>
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        amountInput.errors && amountInput.touched
+          ? amountInput.errors.pattern
+          : false
+      "
+    >
+      Please enter a valid amount.
+    </div>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-success" [disabled]="!form.valid">
+      {{ editMode ? "Update" : "Add" }}
+    </button>
+  </div>
 </form>
+<hr />

@@ -1,5 +1,18 @@
-.recipes{
-    display: grid;
-    grid-gap: 40px;
-    grid-template-columns: 1.5fr 2fr;
+.recipes {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-areas:
+    "recipes-list recipes-details"
+    "router-outlet .";
+}
+
+app-recipes-list {
+  grid-area: recipes-list;
+}
+app-recipes-details {
+  grid-area: recipes-details;
+}
+router-outlet {
+  grid-area: router-outlet;
 }

@@ -1,5 +1,7 @@
-<app-header (menuChanged)="onMenuChanged($event)"></app-header>
+<app-header></app-header>
 <main>
-  <app-recipes *ngIf="activeMenuLink=='recipe'"></app-recipes>
-  <app-shopping-list *ngIf="activeMenuLink=='shopping'"></app-shopping-list>
+  <!-- <app-recipes *ngIf="activeMenuLink=='recipe'"></app-recipes>
+  <app-shopping-list *ngIf="activeMenuLink=='shopping'"></app-shopping-list> -->
+
+  <router-outlet></router-outlet>
 </main>

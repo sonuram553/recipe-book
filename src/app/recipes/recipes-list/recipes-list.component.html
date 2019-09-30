@@ -1,6 +1,11 @@
 <section class="recipe-list">
-  <button class="btn btn-success">Add Recipe</button>
+  <button class="btn btn-success" (click)="onCreateNewRecipe()">Add Recipe</button>
   <hr />
-  <app-recipes-item *ngFor="let recipeItem of recipes"
-  [recipeItem]="recipeItem"></app-recipes-item>
+  <ul class="list-group">
+    <app-recipes-item
+      *ngFor="let recipeItem of recipes; let index = index"
+      [recipeItem]="recipeItem"
+      [index]="index"
+    ></app-recipes-item>
+  </ul>
 </section>

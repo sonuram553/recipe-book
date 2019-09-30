@@ -1,27 +1,37 @@
 <section class="recipe-details">
   <section>
-    <img
-      src="https://www.maxpixel.net/static/photo/1x/Kitchen-Meat-Vegetable-Recipe-Morocco-Couscous-3440042.jpg"
-      alt=""
-    />
+    <img [src]="selectedRecipe.imagePath" alt="" />
   </section>
   <section class="heading">
-    <h2>Recipe Name</h2>
-    <div class="btn-group">
+    <h2>{{ selectedRecipe.name }}</h2>
+    <div class="dropdown">
       <button
-        class="btn btn-primary dropdown-toggle"
+        class="btn btn-secondary btn-sm dropdown-toggle"
         type="button"
+        id="dropdownMenuButton"
         data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
       >
-        Manage Recipe <span class="caret"></span>
+        Manage Recipe
       </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">HTML</a></li>
-        <li><a href="#">CSS</a></li>
-        <li><a href="#">JavaScript</a></li>
-      </ul>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" (click)="addToShoppingList()">To Shopping</a>
+        <a class="dropdown-item" routerLink="edit">Edit Recipe</a>
+        <a class="dropdown-item">Something else here</a>
+      </div>
     </div>
   </section>
-  <section class="description">description</section>
-  <section class="ingredients">ingredients</section>
+  <section class="description">{{ selectedRecipe.description }}</section>
+  <section class="ingredients">
+    <h3>Ingredients List</h3>
+    <ul class=" list-group">
+      <li
+        class=" list-group-item"
+        *ngFor="let ingredient of selectedRecipe.ingredients"
+      >
+        {{ ingredient.name }} ({{ ingredient.amount }})
+      </li>
+    </ul>
+  </section>
 </section>

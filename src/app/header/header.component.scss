@@ -1,49 +1,40 @@
+$textColor: rgba(255, 255, 255, 0.7);
+$bgColor: #232b2b;
+
+nav,
+ul {
+  display: flex;
+}
+
+h1{
+  font-size: 2rem;
+  margin-right: 100px;
+}
+
 nav {
-  padding: 10px 40% 10px 20px;
-  display: flex;
-  background: lightcoral;
+  color: $textColor;
+  background: $bgColor;
+  align-items: center;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  width:400px;
   justify-content: space-between;
-
-  a {
-    color: white;
-  }
+  align-items: center;
 }
 
-li {
-  display: inline-block;
+li{
+  padding: 5px 6px;
+  cursor: pointer;
 }
 
-.dropDownLinks {
-  margin-left: 100px;
+[routerLink]{
+  color:white;
 }
 
-.brand {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  > a {
-    text-decoration: none;
-  }
-}
-
-.navLinks {
-  padding: 0;
-  width: 400px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.active {
-  border: 1px solid;
-}
-
-@media (max-width: 900px) {
-  nav {
-    padding-right: 20px;
-  }
-}
-
-@media (max-width: 550px) {
-  .navLinks {
-    display: none;
-  }
+.active{
+  border: 2px solid;
+  color:rgba(255, 255, 255, 0.9);
 }

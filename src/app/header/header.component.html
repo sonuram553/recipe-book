@@ -1,16 +1,29 @@
 <nav>
-  <h1 class="brand"><a href="#">Recipe Book</a></h1>
+  <h1>Recipe Book</h1>
   <ul class="navLinks">
-    <li [ngClass]="{ active: activeLink == 'recipe' }">
-      <a href="#" (click)="onSelect('recipe')">Recipes</a>
+    <li routerLinkActive="active">
+      <a routerLink="/recipes">Recipes</a>
     </li>
-    <li [ngClass]="{ active: activeLink == 'shopping' }">
-      <a href="#" (click)="onSelect('shopping')">Shopping List</a>
+    <li routerLinkActive="active">
+      <a routerLink="/shopping-list">Shopping List</a>
     </li>
-    <li>
-      <ul class="dropDownLinks">
-        <li><a href="#">Manage</a></li>
-      </ul>
+    <li class="dropdown">
+      <span
+        class="dropdown-toggle"
+        id="navbarDropdown"
+        role="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Manage
+      </span>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item">Action</a>
+        <a class="dropdown-item">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item">Something else here</a>
+      </div>
     </li>
   </ul>
 </nav>
