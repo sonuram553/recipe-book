@@ -6,7 +6,7 @@ import { RecipesDetailsComponent } from "./recipes/recipes-details/recipes-detai
 import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component";
 
 const appRoutes: Routes = [
-  { path: "", redirectTo: "/recipes", pathMatch: "full" },
+  { path: "", redirectTo: "/recipes/0", pathMatch: "full" },
   {
     path: "recipes",
     component: RecipesComponent,

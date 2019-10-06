@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
@@ -10,8 +11,9 @@ import { ShoppingEditComponent } from "./shopping-list/shopping-edit/shopping-ed
 import { RecipesListComponent } from "./recipes/recipes-list/recipes-list.component";
 import { RecipesDetailsComponent } from "./recipes/recipes-details/recipes-details.component";
 import { RecipesItemComponent } from "./recipes/recipes-item/recipes-item.component";
-import { AppRoutingModule } from './app-routing.module';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component";
+import { ShoppingItemComponent } from "./shopping-list/shopping-item/shopping-item.component";
 
 @NgModule({
   declarations: [
@@ -23,9 +25,16 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     RecipesListComponent,
     RecipesDetailsComponent,
     RecipesItemComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    ShoppingItemComponent
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

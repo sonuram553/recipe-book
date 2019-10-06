@@ -1,2 +1,55 @@
-<p>recipe-edit works!</p>
-{{ selectedRecipe }}
+<form [formGroup]="recipeForm" (ngSubmit)="onSave()">
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="!recipeForm.valid"
+    title="{{ !recipeForm.valid ? 'Please enter valid details' : '' }}"
+  >
+    Save
+  </button>
+  <button type="button" class="btn btn-outline-info" (click)="onCancel()">
+    Cancel
+  </button>
+  <hr />
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class=" form-control" formControlName="name" />
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea
+      class=" form-control"
+      formControlName="description"
+      id="description"
+      rows="4"
+    ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="imagePath">Image URL</label>
+    <input type="text" class="form-control" formControlName="imagePath" />
+  </div>
+
+  <div formArrayName="ingredients">
+    <label>List of ingredients</label>
+    <div
+      class="form-group ingredientsGroup"
+      *ngFor="let ingredientCtrl of getControls(); let index = index"
+      [formGroupName]="index"
+    >
+      <input type="text" class="form-control" formControlName="name" />
+      <input type="number" class="form-control" formControlName="amount" />
+      <i
+        class="fa fa-trash"
+        aria-hidden="true"
+        (click)="onDeleteIngredient(+index)"
+      ></i>
+    </div>
+  </div>
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="onAddIngredient()"
+  >
+    Add Ingredient
+  </button>
+</form>

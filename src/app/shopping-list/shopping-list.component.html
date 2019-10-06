@@ -1,23 +1,10 @@
 <section class="shopping-list">
   <app-shopping-edit></app-shopping-edit>
   <ul class="list-group">
-    <li
-      class="list-group-item"
+    <app-shopping-item
       *ngFor="let ingredient of ingredients; let index = index"
-    >
-      <span>{{ ingredient.name }} ({{ ingredient.amount }})</span>
-      <span class="editIcons"
-        ><i
-          class="fa fa-edit"
-          aria-hidden="true"
-          (click)="onEditIngredient(+index, 'edit')"
-        ></i>
-        <i
-          class="fa fa-trash"
-          aria-hidden="true"
-          (click)="onEditIngredient(+index, 'delete')"
-        ></i>
-      </span>
-    </li>
+      [ingredient]="ingredient"
+      [index]="index"
+    ></app-shopping-item>
   </ul>
 </section>

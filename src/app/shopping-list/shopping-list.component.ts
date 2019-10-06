@@ -2,9 +2,8 @@ import {
   Component,
   OnInit,
   OnDestroy,
-  ViewChild,
-  ElementRef
 } from "@angular/core";
+
 import { Ingredient } from "../shared/ingredient.model";
 import { ShoppingListService } from "./shopping-list.service";
 import { Subscription } from "rxjs";
@@ -25,14 +24,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.subs = this.shoppingListService.ingredientChanged.subscribe(() => {
       this.ingredients = this.shoppingListService.getIngredients();
     });
-  }
-
-  onEditIngredient(index: number, operation: string) {
-    if (operation === "delete")
-      this.shoppingListService.deleteIngredient(index);
-    else {
-      this.shoppingListService.updateIngredient.next(index);
-    }
   }
 
   ngOnDestroy() {

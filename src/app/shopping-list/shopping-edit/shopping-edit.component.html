@@ -34,7 +34,7 @@
           : false
       "
     >
-      Please enter a amount.
+      Please enter an amount.
     </div>
     <div
       class="invalid-feedback"
@@ -48,9 +48,15 @@
     </div>
   </div>
   <div>
-    <button type="submit" class="btn btn-success" [disabled]="!form.valid">
+    <button
+      type="submit"
+      title="{{ !form.valid ? 'Please fill valid details.' : '' }}"
+      class="btn btn-success"
+      [disabled]="!form.valid"
+    >
       {{ editMode ? "Update" : "Add" }}
     </button>
+    <button type="button" class="btn btn-outline-primary" (click)="onClear()">Clear</button>
   </div>
 </form>
 <hr />

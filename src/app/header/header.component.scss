@@ -18,6 +18,10 @@ nav {
   padding: 10px;
 }
 
+.disabled{
+  cursor: not-allowed;
+}
+
 ul {
   list-style-type: none;
   width:400px;
@@ -31,10 +35,12 @@ li{
 }
 
 [routerLink]{
-  color:white;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .active{
-  border: 2px solid;
-  color:rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  [routerLink]{
+    color:rgba(255, 255, 255, 0.9);
+  }
 }

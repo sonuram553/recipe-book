@@ -1,0 +1,27 @@
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.editIcons {
+  display: flex;
+  justify-content: space-between;
+  width: 50px;
+  color: rgba($color: #000000, $alpha: 0.7);
+}
+
+.fa {
+  cursor: pointer;
+}
+
+.fa:active {
+  color: rgba($color: rebeccapurple, $alpha: 0.6);
+}
+
+.disabled {
+  color: rgba($color: #000000, $alpha: 0.4);
+  pointer-events: none;
+  cursor: not-allowed;
+}

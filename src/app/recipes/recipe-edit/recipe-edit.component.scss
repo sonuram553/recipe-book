@@ -1,0 +1,32 @@
+form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.ingredientsGroup {
+  display: flex;
+  > input {
+    margin-right: 10px;
+  }
+}
+
+.fa-trash {
+  margin: auto;
+  cursor: pointer;
+}
+
+.fa-trash:active {
+  color: rgba($color: rebeccapurple, $alpha: 0.6);
+}
+
+button[type="submit"] {
+  margin-right: 10px;
+}
+
+.ng-invalid.ng-touched {
+  border-color: #dc3545;
+}
+
+.ng-invalid.ng-touched:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}

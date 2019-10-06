@@ -8,18 +8,15 @@ div {
   margin: 0;
 }
 
-.btn {
-  width: 100px;
-}
-
 .btn-success {
   margin-right: 20px;
+  
 }
 
-input.ng-invalid.ng-touched {
+.ng-invalid.ng-touched {
   border-color: #dc3545;
 }
-input.ng-invalid.ng-touched:focus {
+.ng-invalid.ng-touched:focus {
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 

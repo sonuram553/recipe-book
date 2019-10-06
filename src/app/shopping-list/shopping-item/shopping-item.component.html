@@ -1,0 +1,16 @@
+<li class="list-group-item">
+  <span>{{ ingredient.name }} ({{ ingredient.amount }})</span>
+  <span class="editIcons"
+    ><i
+      class="fa fa-edit"
+      aria-hidden="true"
+      (click)="onEditIngredient(+index, 'edit')"
+    ></i>
+    <i
+      class="fa fa-trash"
+      aria-hidden="true"
+      (click)="onEditIngredient(+index, 'delete')"
+      [ngClass]="{ disabled: isActive ? true : false }"
+    ></i>
+  </span>
+</li>
