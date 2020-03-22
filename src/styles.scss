@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 //@import "../../reset";
 
+* {
+  box-sizing: border-box;
+}
+
 main {
   padding: 50px 30px 15px;
 }
